@@ -1,0 +1,19 @@
+{% extends "admintemplates/base.html" %}
+{% load static %}
+{% block content %}
+<h3>Home Tuition System List</h3>
+<table>
+	<thead>
+		<tr>
+			<th>Name</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for hometuitionsystem in adminhometuitionsystemlist %}
+		<tr>
+			<td>{{hometuitionsystem.name}}</td>
+		</tr>
+		{% endfor %}
+	</tbody>
+</table>
+{% endblock %}
