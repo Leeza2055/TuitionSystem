@@ -10,10 +10,13 @@ urlpatterns = [
     path("system_admin/", AdminHomeView.as_view(), name='adminhome'),
     path("system_admin/hometuitionsystem/create/",
          AdminHomeTuitionSystemCreateView.as_view(), name="adminhometuitionsystemcreate"),
-
     path('system_admin/hometuitionsystem/list/',
          AdminHomeTuitionSystemListView.as_view(), name="adminhometuitionsystemlist"),
     path('system_admin/<int:pk>/hometuitionsystem/detail/',
          AdminHomeTuitionSystemDetailView.as_view(), name="adminhometuitionsystemdetail"),
+    path('system_admin/<int:pk>/hometuitionsystem/update/',
+         AdminHomeTuitionSystemUpdateView.as_view(), name="adminhometuitionsystemupdate"),
+    path('system_admin/<int:pk>/hometuitionsystem/delete/',
+         AdminHomeTuitionSystemDeleteView.as_view(), name="adminhometuitionsystemdelete"),
 
 ]

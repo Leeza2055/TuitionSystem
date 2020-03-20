@@ -29,3 +29,18 @@ class AdminHomeTuitionSystemDetailView(DetailView):
     template_name = "admintemplates/adminhometuitionsystemdetail.html"
     model = HomeTuitionSystem
     context_object_name = "adminhometuitionsystemdetail"
+
+
+class AdminHomeTuitionSystemUpdateView(UpdateView):
+    template_name = "admintemplates/adminhometuitionsystemcreate.html"
+    form_class = HomeTuitionSystemCreateForm
+    success_url = reverse_lazy(
+        "hometuitionsystemapp:adminhometuitionsystemlist")
+    model = HomeTuitionSystem
+
+
+class AdminHomeTuitionSystemDeleteView(DeleteView):
+    template_name = "admintemplates/adminhometuitionsystemdelete.html"
+    success_url = reverse_lazy(
+        "hometuitionsystemapp:adminhometuitionsystemlist")
+    model = HomeTuitionSystem

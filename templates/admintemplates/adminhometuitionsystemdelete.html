@@ -1,0 +1,10 @@
+{% extends "admintemplates/base.html" %}
+{% load static %}
+{% block content %}
+<h3>Delete Form</h3>
+<form  method="POST">
+	{% csrf_token %}
+	<h2>Are you sure you want to delete?</h2>
+	<button>Yes</button>	 
+</form>
+{% endblock %}
