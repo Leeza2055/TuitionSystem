@@ -1,0 +1,10 @@
+{% extends "admintemplates/base.html" %}
+{% load static %}
+{% block content %}
+<h3>Create Form</h3>
+<form enctype="multipart/form-data" method="POST">
+	{% csrf_token %}
+	{{form.as_p}}
+	<button>Submit</button>
+</form>
+{% endblock %}

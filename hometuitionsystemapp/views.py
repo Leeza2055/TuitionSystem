@@ -1,5 +1,7 @@
 from django.views.generic import *
 from .models import *
+from django.urls import reverse_lazy
+from .forms import *
 
 
 class ClientHomeView(TemplateView):
@@ -8,6 +10,13 @@ class ClientHomeView(TemplateView):
 
 class AdminHomeView(TemplateView):
     template_name = 'admintemplates/adminhome.html'
+
+
+class AdminHomeTuitionSystemCreateView(CreateView):
+    template_name = "admintemplates/adminhometuitionsystemcreate.html"
+    form_class = HomeTuitionSystemCreateForm
+    success_url = reverse_lazy(
+        "hometuitionsystemapp:adminhometuitionsystemlist")
 
 
 class AdminHomeTuitionSystemListView(ListView):
