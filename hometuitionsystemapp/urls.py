@@ -10,4 +10,7 @@ urlpatterns = [
     path("system_admin/", AdminHomeView.as_view(), name='adminhome'),
     path('system_admin/hometuitionsystem/list/',
          AdminHomeTuitionSystemListView.as_view(), name="adminhometuitionsystemlist"),
+    path('system_admin/<int:pk>/hometuitionsystem/detail/',
+         AdminHomeTuitionSystemDetailView.as_view(), name="adminhometuitionsystemdetail"),
+
 ]

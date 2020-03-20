@@ -11,7 +11,7 @@
 	<tbody>
 		{% for hometuitionsystem in adminhometuitionsystemlist %}
 		<tr>
-			<td>{{hometuitionsystem.name}}</td>
+			<td><li><a href="{% url 'hometuitionsystemapp:adminhometuitionsystemdetail' hometuitionsystem.pk %}">{{hometuitionsystem.name}}</td></a></li>
 		</tr>
 		{% endfor %}
 	</tbody>

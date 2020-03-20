@@ -14,3 +14,9 @@ class AdminHomeTuitionSystemListView(ListView):
     template_name = "admintemplates/adminhometuitionsystemlist.html"
     queryset = HomeTuitionSystem.objects.all()
     context_object_name = "adminhometuitionsystemlist"
+
+
+class AdminHomeTuitionSystemDetailView(DetailView):
+    template_name = "admintemplates/adminhometuitionsystemdetail.html"
+    model = HomeTuitionSystem
+    context_object_name = "adminhometuitionsystemdetail"
