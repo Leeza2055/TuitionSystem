@@ -1,0 +1,29 @@
+{% extends "clienttemplates/base.html" %}
+{% load static %}
+{% block content %}
+<div class="login-form">
+	<form action="", method="POST">
+		<div>
+			<p>User Name</p>
+			<input type="text" class="name" name="user name" required="">
+		</div>
+		<div>
+			<p>Email</p>
+			<input type="email" class="email" name="email" required="">
+		</div>
+		<div>
+			<p>Password</p>
+			<input type="password" class="password" name="Password" required="">
+		</div>
+		<div>
+			<p>Confirm Password</p>
+			<input type="password" class="password" name="Password" required="">
+		</div>
+		<label class="anim">
+			<input type="checkbox" class="checkbox">
+			<span>I Accept Term & Conditions</span>
+		</label>
+		<input type="submit" value="Register">		
+	</form>	
+</div>
+{% endblock %}

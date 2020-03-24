@@ -1,0 +1,31 @@
+{% extends "clienttemplates/base.html" %}
+{% load static %}
+{% block content %}
+<div class="login-form">
+	<form action ='' method="POST">
+		{% csrf_token %}
+		<div>
+			<p>User Name</p>
+			{{form.username}}
+		</div>
+		<div>
+			<p>Password</p>
+			{{form.password}}
+		</div>
+		<p style="color: red">{{error}}</p>
+		<label class="anim">
+			<input type="checkbox" class="checkbox">
+			<span>Remember me?</span>	
+		</label>
+		<div class="login-agileits-bottom wthree">
+			<h6>
+				<a href="#">Forgot password?</a>
+			</h6>
+		</div>
+		<input type="submit" value="Login">
+		<div class="register-forming">
+			<p>To Register New Account -- <a href="{% url 'hometuitionsystemapp:clientregister' %}">Click Here</a></p>
+		</div>
+	</form>
+</div>	
+{% endblock %}
