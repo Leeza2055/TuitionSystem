@@ -1,6 +1,7 @@
 from django.views.generic import *
 from .models import *
 from django.urls import reverse_lazy
+from django.contrib.auth import authenticate, login, logout
 from .forms import *
 
 
@@ -11,7 +12,7 @@ class ClientHomeView(TemplateView):
 class ClientLoginView(FormView):
     template_name = "clienttemplates/login.html"
     form_class = LoginForm
-    success_url = reverse_lazy("hometuitionsystemapp:system_admin")
+    success_url = reverse_lazy("hometuitionsystemapp:adminhome")
 
     def form_valid(self, form):
         uname = form.cleaned_data["username"]
@@ -21,9 +22,9 @@ class ClientLoginView(FormView):
             login(self.request, user)
         else:
             return render(self.request, "clienttemplates/login.html",
-            {
-                "error": "Invalid username or password", "form": form
-            })
+                          {
+                              "error": "Invalid username or password", "form": form
+                          })
         return super().form_valid(form)
 
 
@@ -45,6 +46,12 @@ class AdminRequiredMixin(object):
 
 class AdminHomeView(TemplateView):
     template_name = 'admintemplates/adminhome.html'
+
+
+class AdminLogoutView(View):
+    def get(self, request):
+        logout(request)
+        return redirect("/")
 
 
 class AdminHomeTuitionSystemCreateView(CreateView):

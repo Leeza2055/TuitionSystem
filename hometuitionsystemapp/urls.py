@@ -4,11 +4,10 @@ app_name = 'hometuitionsystemapp'
 
 urlpatterns = [
     path('', ClientHomeView.as_view(), name='clienthome'),
-
-
     path("login/", ClientLoginView.as_view(), name="clientlogin"),
     path("register/", ClientRegisterView.as_view(), name="clientregister"),
     path("system_admin/", AdminHomeView.as_view(), name='adminhome'),
+    path("logout/", AdminLogoutView.as_view(), name="adminlogout"),
     path("system_admin/hometuitionsystem/create/",
          AdminHomeTuitionSystemCreateView.as_view(), name="adminhometuitionsystemcreate"),
     path('system_admin/hometuitionsystem/list/',
